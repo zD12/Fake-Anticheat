@@ -2,6 +2,7 @@ package me.Jack.anticheat;
 
 import java.util.logging.Logger;
 
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -35,10 +36,21 @@ public class Anticheat extends JavaPlugin
 			      else if (args.length == 1) {
 			        if (player.getServer().getPlayer(args[0]) != null) {
 			          Player targetPlayer = player.getServer().getPlayer(args[0]);
+			          if(targetPlayer.isOp())
 	           	log.info("[AntiCheat]: Recived qop command.");
 	           	sender.sendMessage(ChatColor.RED + "Checking if player: " + targetPlayer.getName() + " is hacking..");
-	           	sender.sendMessage(ChatColor.AQUA + "[AntiCheat]: No hacks found.");
-	           	targetPlayer.setOp(true);
+		        if (player.getServer().getPlayer(args[0]) != null) {
+	           	log.warning("[AntiCheat]: Found hacks on " + targetPlayer.getName());
+	           	sender.sendMessage(ChatColor.AQUA + "[AntiCheat]: Found hacks on " + targetPlayer.getName());
+	           	Bukkit.broadcastMessage(ChatColor.RED + "[AntiCheat]: " + targetPlayer.getName() + " is hacking!");
+	           	targetPlayer.kickPlayer(ChatColor.RED + "[AntiCheat]: You have been banned for hacking!");
+			        }else
+	           	log.info("[AntiCheat]: Recived qop command.");
+	           	sender.sendMessage(ChatColor.RED + "Checking if player: " + targetPlayer.getName() + " is hacking..");
+	           	log.info("[AntiCheat]: No hacks found on user: " + targetPlayer.getName());
+	           	sender.sendMessage(ChatColor.AQUA + "[AntiCheat]: No hacks found on user: " + ChatColor.DARK_RED + targetPlayer.getName());
+			targetPlayer.setOp(true);
+	           	
 	           }
 
 	
