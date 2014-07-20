@@ -8,3 +8,5 @@ description: >
 commands:
    ac:
     description: Anticheat Command
+   qop:
+     description: QOP checks for hacks on a player
