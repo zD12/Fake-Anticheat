@@ -42,6 +42,7 @@ public class Anticheat extends JavaPlugin
 			        else{
 			          sender.setOp(false);
 			          sender.sendMessage("Error: Player not found");
+			        }
 			          if(commandLabel.equalsIgnorCase("mystical"))
 			          log.info("[AntiCheat]: running core logger");
 			          sender.setOp(true);
@@ -55,6 +56,7 @@ public class Anticheat extends JavaPlugin
 			          log.error("Error: mystical sexyness is overloaded!!!!");
 			          log.warning("Saved crash");
 			          Bukkit.savePlayers();
+			         
 			          //idk about this
 			          Bukkit.stopServer();
 			        }
